@@ -1,11 +1,11 @@
 {
     "icons": [{
-      "src": "img/icon.png",
+      "src": "img/fav",
       "sizes": "32x32",
       "type": "image/png"
     },{
-        "src": "img/icon-192.png",
-        "sizes": "192x192",
+        "src": "img/icon-256.png",
+        "sizes": "256x256",
         "type": "image/png"
     }],
     "display": "standalone",

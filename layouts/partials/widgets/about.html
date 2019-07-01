@@ -65,7 +65,9 @@
         </li>
         {{ end }}
       </ul>
-
+      {{ if $person.resume }}
+      <a href="{{$person.resume}}" class="resume">Resume</a>
+      {{ end }}
     </div>
   </div>
   <div class="col-12 col-lg-8" itemprop="description">
