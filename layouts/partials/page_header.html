@@ -30,40 +30,8 @@
 
 {{/* Featured image */}}
 {{ if and $featured (not .Params.image.preview_only) }}
-{{ $image := $featured.Resize "800x" }}
-<div class="article-header d-xl-none">
-  <div class="featured-image" style="background-image: url('{{ $image.RelPermalink }}');"></div>
-  {{ with $.Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
-</div>
-
-{{ $image := $featured.Fill (printf "680x500 q90 %s" $anchor) }}
-<div class="container-fluid split-header d-none d-xl-block">
-  <div class="row">
-    <div class="col-6">
-      <div class="split-header-content">
-        <h1 itemprop="name">{{ $title }}</h1>
-
-        {{ with $page.Params.subtitle }}
-        <p class="page-subtitle">{{ . | markdownify | emojify }}</p>
-        {{end}}
-
-        {{ partial "page_metadata" (dict "page" $page "is_list" 0) }}
-
-        {{ partial "page_links_div.html" $page }}
-
-        {{ partial "share.html" $page }}
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="split-header-image">
-        <img src="{{ $image.RelPermalink }}" itemprop="image" alt="">
-        {{ with $.Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="article-container d-xl-none">
+<div class="article-container">
+  <img class="img-responsive" src="{{ $featured.RelPermalink }}"></img>
   <h1 itemprop="name">{{ $title }}</h1>
 
   {{ with $page.Params.subtitle }}
